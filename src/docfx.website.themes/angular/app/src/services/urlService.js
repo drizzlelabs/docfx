@@ -62,6 +62,11 @@
           if (linenum > 0) path += '/#L' + linenum;
           return path;
         }
+        if (repo.match(/https:\/\/github.*\.com\/.*/g)) {
+          var path = repo + '/blob' + '/' + remote.branch + '/' + remote.path;
+          if (linenum > 0) path += '/#L' + linenum;
+          return path;
+}
       } else {
         return '';
       }
