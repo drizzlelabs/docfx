@@ -96,7 +96,8 @@ function getRemoteUrl(remote, startLine, gitContribute) {
 }
 
 function getGithubUrlPrefix(repo) {
-    var regex = /^(?:https?:\/\/)?(?:\S+\@)?(?:\S+\.)?(github\.com(?:\/|:).*)/gi;
+    // var regex = /^(?:https?:\/\/)?(?:\S+\@)?(?:\S+\.)?(github\.com(?:\/|:).*)/gi;
+    var regex = /^(?:https?:\/\/)?(?:\S+\@)?(?:\S+\.)?(github.rackspace.com(?:\/|:).*)/gi;
     if (!regex.test(repo)) return '';
     return repo.replace(regex, function (match, p1, offset, string) {
         return 'https://' + p1.replace(':', '/');

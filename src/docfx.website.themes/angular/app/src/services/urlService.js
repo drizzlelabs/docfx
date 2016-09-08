@@ -57,20 +57,15 @@
           // TODO: line not working for vso
           return repo + '#path=/' + remote.path;
         }
-        if (repo.match(/https:\/\/.*github\.com\/.*/g)) {
+        if (repo.match(/https:\/\/.*rackspace\.com\/.*/g)) {
           var path = repo + '/blob' + '/' + remote.branch + '/' + remote.path;
           if (linenum > 0) path += '/#L' + linenum;
           return path;
         }
-        if (repo.match(/https:\/\/github.*\.com\/.*/g)) {
-          var path = repo + '/blob' + '/' + remote.branch + '/' + remote.path;
-          if (linenum > 0) path += '/#L' + linenum;
-          return path;
-}
       } else {
         return '';
       }
-    };
+};
 
     this.getPathInfo = function(currentPath) {
       if (!currentPath) return null;
